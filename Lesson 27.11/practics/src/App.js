@@ -6,11 +6,12 @@ import PostItem from './components/postItem/PostItem';
 
 function App() {
 
-  const [posts, setPost]= useState(postsData);
-  console.log(posts);
+  const [posts, setPosts]= useState(postsData);
+
+  const deletePost = post_id => setPosts(posts.filter(el => el.id !== post_id));
   return (
     <div >
-      <PostContainer posts={posts}/>
+    <PostContainer posts={posts} deletePost={deletePost} />
       <PostItem/>
     </div>
   );

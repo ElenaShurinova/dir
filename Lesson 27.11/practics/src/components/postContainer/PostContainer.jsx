@@ -1,11 +1,15 @@
 import React from 'react'
 import PostItem from '../postItem/PostItem'
-export default function PostContainer  ({posts})  {
+
+export default function PostContainer  ({posts,deletePost})  {
   return (
     <div>
+
+
+      
         {
-        posts.map(el=> <postItem key={el.id}
-            title={el.title} description={el.description}/>
+        posts.map(el=> <PostItem key={el.id}
+            deletePost={deletePost} {...el}/>
 
         )
         }
